@@ -9,3 +9,9 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+I simplified the fuction which was before
+- if no event I immideately return TRIVIAL_PARTITION_KEY (no sense to read code farher and confuse the develiopers)
+- I added createHash function because it's used twice
+- Then I try get partition key if it's exist, if no I get hash of teh whole event object (this condition was simplified)
+- If partition key is not a string then I stringify it
+- The last condition I left, it's clear and easy
